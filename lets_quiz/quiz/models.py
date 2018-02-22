@@ -6,7 +6,9 @@ from model_utils.models import TimeStampedModel
 
 
 class Question(TimeStampedModel):
-    html = models.TextField(_('Question text'))
+    ALLOWED_NUMBER_OF_CORRECT_CHOICES = 1
+    html = models.TextField(_('Question Text'))
+    is_published = models.BooleanField(_('Has been published?'), default=False, null=False)
 
     def __str__(self):
         return self.html

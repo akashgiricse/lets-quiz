@@ -18,12 +18,21 @@ class ChoiceInline(admin.TabularInline):
 class QuestionAdmin(admin.ModelAdmin):
     model = Question
     inlines = (ChoiceInline, )
+    list_display = ['html', 'is_published']
+    list_filter = ['is_published']
+    search_fields = ['html', 'choices__html']
+
     actions = None
 
     form = QuestionForm
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+    def has_change_permission(self, request, obj=None):
+        if obj is not None and obj.pk is not None and obj.is_published is True:
+            return False
+        return True
 
 
 admin.site.register(Question, QuestionAdmin)
