@@ -15,7 +15,7 @@ class Question(TimeStampedModel):
 class Choice(TimeStampedModel):
     question = models.ForeignKey(Question, related_name='choices', on_delete=models.CASCADE)
     html = models.TextField(_('Choice text'))
-
+    is_correct = models.BooleanField(_('Is this choice correct?'), default=False, null=False)
     MAX_CHOICES_COUNT = 4
 
     def __str__(self):
