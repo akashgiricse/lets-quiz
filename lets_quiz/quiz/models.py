@@ -16,5 +16,7 @@ class Choice(TimeStampedModel):
     question = models.ForeignKey(Question, related_name='choices', on_delete=models.CASCADE)
     html = models.TextField(_('Choice text'))
 
+    MAX_CHOICES_COUNT = 4
+
     def __str__(self):
         return self.html
