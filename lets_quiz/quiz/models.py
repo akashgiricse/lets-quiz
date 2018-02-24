@@ -1,3 +1,4 @@
+import random
 from django.db import models
 from django.utils.translation import gettext as _
 from model_utils.models import TimeStampedModel
@@ -31,6 +32,13 @@ class QuizProfile(TimeStampedModel):
 
     def __str__(self):
         return f'<QuizProfile: user={self.user}>'
+
+    def get_new_question(self):
+        used_question_pk = AttemptedQuestion.objects.filter(quiz_profile=self).values_list('question__pk', flat=True)
+        remaining_questions = Question.objects.exclude(pk__in=used_question_pk)
+        if not remaining_questions.exists():
+            return
+        return random.choice(remaining_questions)
 
 
 class AttemptedQuestion(TimeStampedModel):
