@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext as _
 from model_utils.models import TimeStampedModel
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -22,3 +23,19 @@ class Choice(TimeStampedModel):
 
     def __str__(self):
         return self.html
+
+
+class QuizProfile(TimeStampedModel):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    total_score = models.DecimalField(_('Total Score'), default=0, decimal_places=2, max_digits=10)
+
+    def __str__(self):
+        return f'<QuizProfile: user={self.user}>'
+
+
+class AttemptedQuestion(TimeStampedModel):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    quiz_profile = models.ForeignKey(QuizProfile, on_delete=models.CASCADE, related_name='attempts')
+    selected_choice = models.ForeignKey(Choice, on_delete=models.CASCADE, null=True)
+    is_correct = models.BooleanField(_('Was this attempt correct?'), default=False, null=False)
+    marks_obtained = models.DecimalField(_('Marks Obtained'), default=0, decimal_places=2, max_digits=6)
