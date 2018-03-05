@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Let's Quiz | Submission Result {% endblock title %}
+{% block content %}
+
+<p>
+	{{ attempted_question.question.html|safe }}
+</p>
+
+<p>
+	<strong>Your answer: </strong>
+	{{ attempted_question.selected_choice.html|safe }}
+</p>
+
+{% if selected_choice.is_correct %}
+{% else %}
+<h4 class="text-danger">Your answer is incorrect. 🙁</h4>
+{% endif %}
+
+<a class="btn btn-primary" href="/play/">Show next question</a>
+
+{% endblock content %}
