@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
+
 from .models import QuizProfile, Question, AttemptedQuestion
-# Create your views here.
 
 
 def home(request):
@@ -12,9 +12,12 @@ def home(request):
 
 
 def leaderboard(request):
+
     top_quiz_profiles = QuizProfile.objects.order_by('-total_score')[:500]
+    total_count = top_quiz_profiles.count()
     context = {
-        'quiz_profiles': top_quiz_profiles,
+        'top_quiz_profiles': top_quiz_profiles,
+        'total_count': total_count,
     }
     return render(request, 'quiz/leaderboard.html', context=context)
 
