@@ -37,7 +37,9 @@
             <a class="navbar-brand" href="/">Let's Quiz</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" role="form" action="#" method="post">
+            {% if not request.user.is_active %}
+            <form class="navbar-form navbar-right" role="form" action="/login/" method="post">
+                {% csrf_token %}
                 <div class="form-group">
                     <input type="text" name="username" placeholder="Username" class="form-control">
                 </div>
@@ -46,6 +48,13 @@
                 </div>
                 <button type="submit" class="btn btn-success">Sign in</button>
             </form>
+            {% else %}
+            <div class="navbar-form navbar-right">
+                <span>Welcome, {{ request.user.username }}!</span> |
+                <a href="/logout/">Logout</a>
+            </div>
+
+            {% endif %}
         </div><!--/.navbar-collapse -->
     </div>
 </nav>

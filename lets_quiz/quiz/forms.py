@@ -1,12 +1,13 @@
 from django import forms
-from .models import Question, Choice
 from django.utils.translation import gettext as _
+
+from .models import Question, Choice
 
 
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ['html', 'is_published', ]
+        fields = ['html', 'is_published']
         widgets = {
             'html': forms.Textarea(attrs={'rows': 3, 'cols': 80}),
         }
@@ -28,10 +29,12 @@ class ChoiceInlineFormset(forms.BaseInlineFormSet):
         correct_choices_count = 0
         for form in self.forms:
             if not form.is_valid():
-                return  # other error exist, so don't bother
+                return
+
             if form.cleaned_data and form.cleaned_data.get('is_correct') is True:
                 correct_choices_count += 1
+
         try:
             assert correct_choices_count == Question.ALLOWED_NUMBER_OF_CORRECT_CHOICES
         except AssertionError:
-            raise forms.ValidationError(_('Exactly one correct answer is allowed.'))
+            raise forms.ValidationError(_('Exactly one correct choice is allowed.'))
