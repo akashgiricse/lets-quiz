@@ -5,6 +5,6 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^play/$', views.play, name='play'),
     url(r'^leaderboard/$', views.leaderboard, name='leaderboard'),
-    url(r'^submission-result/<int:attempted_question_pk>/$', views.submission_result, name='submission_result'),
+    url(r'^submission-result/(?P<attempted_question_pk>\d+)/', views.submission_result, name='submission_result'),
 
 ]
