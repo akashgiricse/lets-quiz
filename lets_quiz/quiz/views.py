@@ -11,6 +11,11 @@ def home(request):
     return render(request, 'quiz/home.html', context=context)
 
 
+def user_home(request):
+    context = {}
+    return render(request, 'quiz/user_home.html', context=context)
+
+
 def leaderboard(request):
 
     top_quiz_profiles = QuizProfile.objects.order_by('-total_score')[:500]

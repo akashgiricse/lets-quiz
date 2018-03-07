@@ -1,81 +1,105 @@
 {% load static %}
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %} {% endblock title %}</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <style>
-        body {
-            padding-top: 50px;
-            padding-bottom: 20px;
-        }
-    </style>
-    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     {% block css %}
     {% endblock css %}
 
-
-    <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Let's Quiz</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            {% if not request.user.is_active %}
-            <form class="navbar-form navbar-right" role="form" action="/login/" method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                    <input type="text" name="username" placeholder="Username" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-            {% else %}
-            <div class="navbar-form navbar-right">
-                <span>Welcome, {{ request.user.username }}!</span> | 
-                <a href="/logout/">Logout</a>
-            </div>
-
-            {% endif %}
-        </div><!--/.navbar-collapse -->
-    </div>
-</nav>
-
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+          <h1><a href="{% url 'quiz:home' %}" class="navbar-brand">
+          <img src="http://placehold.it/40x40" alt="Logo" class="rounded">
+           Let's Quiz</a></h1>
+        <form class="form-inline">
+            <div class="mx-auto">
+              <button type="submit" class="btn btn-link btn-danger"><a href="{% url 'admin:index' %}" class="text-white"><i class="fa fa-fw fa-lock " aria-hidden="true"></i>Admin Log In</a></button>
+          </div>
+        </form>
+      </div>
+    </nav>
 
 <div class="container">
+{% block content %}
+{% endblock content %}
+</div>
 
-    {% block content %}{% endblock content %}
-    <hr>
-
-    <footer>
-        <p>&copy; Let's Quiz 2018, All rights reserved.</p>
+    <footer class="bg-light fixed-bottom ">
+      <div class="container my-4">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-3"> 
+            <h6>Quick Links</h6>
+            <ul class="list-unstyled">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">What's new?</a></li>
+              <li><a href="#">Support</a></li>
+              <!-- <li><a href="#">My account</a></li> -->
+              <!-- <li><a href="#">Cancel subscription</a></li> -->
+            </ul>  
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3"> 
+            <h6>Information</h6>
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Jobs</a></li>
+              <!-- <li><a href="#">Press info</a></li> -->
+              <li><a href="#">Contact</a></li>
+              <!-- <li><a href="#">Partnership</a></li> -->
+            </ul>  
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3"> 
+            <h6>Follow Us</h6>
+            <ul class="list-unstyled">
+<!--               <li><a href="#"><i class="fa fa-fw fa-facebook " aria-hidden="true"></i> Facebook</a></li> -->
+              <li><a href="#"><i class="fa fa-fw fa-instagram " aria-hidden="true"></i> Instagram</a></li>
+              <li><a href="#"><i class="fa fa-fw fa-twitter " aria-hidden="true"></i> Twitter</a></li>
+              <!-- <li><a href="#"><i class="fa fa-fw fa-youtube " aria-hidden="true"></i> YouTube</a></li> -->
+              <!-- <li><a href="#"><i class="fa fa-fw fa-linkedin " aria-hidden="true"></i> LinkedIn</a></li> --> 
+            </ul>        
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3"> 
+            <h6>Our location:</h6>
+            <address>
+              <!-- <strong>Quiz App</strong><br> -->
+              BIET, Jhansi<br>
+              Uttar Pradesh, 284128<br>
+              <i class="fa fa-fw fa-phone" aria-hidden="true"></i> <span class="sr-only">Telephone:</span><a href="tel:+919721304421">(+91) 9721304421</a><br>
+              <i class="fa fa-fw fa-inbox" aria-hidden="true"></i> <span class="sr-only">Mail:</span><a href="mailto:bietquiz@gmial.com">buggyrango@gmail.com</a>
+            </address>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-9">
+              <ul class="list-inline">
+                <li class="list-inline-item">&copy; 2018 Let's Quiz.</li>
+                <li class="list-inline-item">All rights reserved.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
     </footer>
-</div> <!-- /container -->
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{% static 'js / vendor / jquery - 1.11.2.min.js' %}"><\/script>'
-)</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA=" crossorigin="anonymous"></script>
 
-<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-{% block js %}{% endblock js %}
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block js %}{% endblock js %}
 </body>
 </html>
