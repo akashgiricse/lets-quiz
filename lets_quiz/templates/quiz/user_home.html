@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 {% block title %} Let's Quiz | Welcome {% endblock title %}
 {% block content %}
-	<div class="jumbotron">
+<!-- 	<div class="jumbotron">
       <div class="container">
         <h1>Hello, world!</h1>
         <p>
-        	<a class="btn btn-primary btn-lg" href="{% url 'quiz:play' %}" role="button">Let's Play</a>
-        	<a class="btn btn-primary btn-lg" href="{% url 'quiz:leaderboard' %}" role="button">See leaderboard</a>
+        	<a class="btn btn-primary btn-lg my-2" href="{% url 'quiz:play' %}" role="button">Let's Play</a>
+        	
         </p>
       </div>
+    </div> -->
+    <div class="jumbotron">
+    	<div class="container">
+	      <h1>Hurrey!! You have successfully logged in.</h1>
+	      <p class="lead">Now you can play the quiz.</p>
+	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet pellentesque lorem sed elementum. Suspendisse maximus convallis ex. Etiam eleifend velit leo.</p>
+	      <a href="{% url 'quiz:play' %}" class="btn btn-primary btn-lg" role="button">Let's Play</a>
+	  </div>
     </div>
 {% endblock content %}
