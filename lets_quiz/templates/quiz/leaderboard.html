@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Let's Quiz | Leaderboard {% endblock title %}
+{% block content %}
+
+<h1 class="text-center">TOP {{ total_count }} PLAYERS</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Username</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for quiz_profile in top_quiz_profiles %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ quiz_profile.user.username }}</td>
+            <td>{{ quiz_profile.total_score }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
