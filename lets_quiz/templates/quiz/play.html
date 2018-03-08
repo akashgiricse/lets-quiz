@@ -6,20 +6,19 @@
 <h1> You have already answered all of our questions. </h1>
 
 
-
 {% else %}
 
-<p>
+<div class="container">
+  <p>
     {{ question.html|safe }}
-</p>
-
+  </p>
 <form class="form" action="" method="post">
     {% csrf_token %}
     <input type="hidden" name="question_pk" value="{{ question.pk }}">
     {% for choice in question.choices.all %}
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="choice_pk" id="choice-{{ forloop.counter }}" value="{{ choice.pk }}">
       <label class="form-check-label" for="choice-{{ forloop.counter }}">
+        <input class="form-check-input" type="checkbox" name="choice_pk" id="choice-{{ forloop.counter }}" value="{{ choice.pk }}">
         {{ choice.html|safe }}
       </label>
     </div>
@@ -27,6 +26,8 @@
     {% endfor %}
     <input class="btn btn-primary" type="submit" value="Submit">
 </form>
+
+</div>
 {% endif %}
 
 {% endblock content %}
