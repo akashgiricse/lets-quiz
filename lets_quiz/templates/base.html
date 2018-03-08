@@ -28,112 +28,27 @@
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end " id="navbar">
                 {% if not request.user.is_active %}
-                <button type="button" class="btn btn-success mx-4" data-toggle="modal" data-target="#loginModal">Log in</button>
+                <a href="{% url 'quiz:login' %}" class="btn btn-info mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a>
                 {% else %}
                 <h5 class="text-white mt-2 mr-2">Welcome, {{ request.user.username }} | </h5>
                 <button type="button" class="btn btn-info  mr-1"><a href="{% url 'quiz:leaderboard' %}" class="text-white">Leaderboard</a></button>
-                <button type="button" class="btn btn-danger  mr-4"><a href="/logout" class="text-white">Log out</a></button>
+                <button type="button" class="btn btn-danger  mr-4"><a href="{% url 'quiz:logout' %}" class="text-white">Log out</a></button>
                 {% endif %}
             </div>
         </div>
 
     </nav>
-    <!-- Modal here -->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" style="display: none;" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form class="navbar-form" role="form" action="/login/" method="POST">
-                    {% csrf_token %}
-                    <div class="form-group mx-4">
-                        <input type="text" name="username" placeholder="username" class="form-control">
-                    </div>
-                     <div class="form-group mx-4">
-                        <input type="password" name="password" placeholder="Password" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success mx-4">Login</button>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              </div>
-            </div>
-          </div>
-        </div> <!-- end Modal -->
-
 
     {% block content %}
     {% endblock content %}
 
 
-    {% if not request.user.is_active %}
-    <footer class="bg-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-lg-3"> 
-            <h6>Quick Links</h6>
-            <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">What's new?</a></li>
-              <li><a href="#">Support</a></li>
-              <!-- <li><a href="#">My account</a></li> -->
-              <!-- <li><a href="#">Cancel subscription</a></li> -->
-            </ul>  
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3"> 
-            <h6>Information</h6>
-            <ul class="list-unstyled">
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Jobs</a></li>
-              <!-- <li><a href="#">Press info</a></li> -->
-              <li><a href="#">Contact</a></li>
-              <!-- <li><a href="#">Partnership</a></li> -->
-            </ul>  
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3"> 
-            <h6>Follow Us</h6>
-            <ul class="list-unstyled">
-    <!--               <li><a href="#"><i class="fa fa-fw fa-facebook " aria-hidden="true"></i> Facebook</a></li> -->
-              <li><a href="#"><i class="fa fa-fw fa-instagram " aria-hidden="true"></i> Instagram</a></li>
-              <li><a href="#"><i class="fa fa-fw fa-twitter " aria-hidden="true"></i> Twitter</a></li>
-              <!-- <li><a href="#"><i class="fa fa-fw fa-youtube " aria-hidden="true"></i> YouTube</a></li> -->
-              <!-- <li><a href="#"><i class="fa fa-fw fa-linkedin " aria-hidden="true"></i> LinkedIn</a></li> --> 
-            </ul>        
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3"> 
-            <h6>Our location:</h6>
-            <address>
-              <!-- <strong>Quiz App</strong><br> -->
-              <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>BIET Jhansi, Uttar Pradesh <br>
-              <i class="fa fa-fw fa-phone" aria-hidden="true"></i> <span class="sr-only">Telephone:</span><a href="tel:+919721304421">(+91) 9721304421</a><br>
-              <i class="fa fa-fw fa-inbox" aria-hidden="true"></i> <span class="sr-only">Mail:</span><a href="mailto:bietquiz@gmial.com">buggyrango@gmail.com</a>
-            </address>
-          </div>
-        </div> 
-        <div class="row">
-          <div class="col-12 col-sm-6 col-lg-9">
-              <ul class="list-inline">
-                <li class="list-inline-item">&copy; 2018 Let's Quiz.</li>
-                <li class="list-inline-item">All rights reserved.</li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-    {% else %}
     <footer >
             <ul class="list-inline text-center">
                 <li class="list-inline-item">&copy; 2018 Let's Quiz.</li>
                 <li class="list-inline-item">All rights reserved.</li>
             </ul>
     </footer>
-    {% endif %}
     <!-- jQuery first, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
