@@ -32,10 +32,11 @@
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end " id="navbar">
                 {% if not request.user.is_active %}
+                <a href="{% url 'quiz:leaderboard' %}" class="btn btn-info mt-1 mx-1"><i class="fa fa-trophy" aria-hidden="true"></i> Leaderboard</a>
                 <a href="{% url 'quiz:login' %}" class="btn btn-info mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a>
                 {% else %}
                 <h5 class="text-white mt-2 mr-2">Welcome, {{ request.user.username }} | </h5>
-                <button type="button" class="btn btn-info  mr-1"><a href="{% url 'quiz:leaderboard' %}" class="text-white">Leaderboard</a></button>
+                
                 <button type="button" class="btn btn-danger  mr-4"><a href="{% url 'quiz:logout' %}" class="text-white">Log out</a></button>
                 {% endif %}
             </div>
