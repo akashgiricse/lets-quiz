@@ -22,9 +22,13 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
+            {% if not request.user.is_active %}
             <h1 class="mx-4"><a href="{% url 'quiz:home' %}" class="navbar-brand">
-            <img src="http://placehold.it/40x40" alt="Logo" class="rounded">
+            <img src="{% static "quiz/logo.png" %}" alt="Logo" class="rounded">
             Let's Quiz</a></h1>
+            {% else %}
+            <h1><img src="{% static "quiz/logo.png" %}" alt="Logo" class="rounded"></h1>
+            {% endif %}
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end " id="navbar">
                 {% if not request.user.is_active %}

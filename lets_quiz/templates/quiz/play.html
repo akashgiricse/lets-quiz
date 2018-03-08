@@ -3,30 +3,33 @@
 {% block content %}
 {% if question is None %}
 
-<h1> You have already answered all of our questions. </h1>
-
+<div class="container">
+  <div class="jumbotron">
+    <h1> You have already answered all of our questions. </h1>
+  </div>
+</div>
 
 {% else %}
 
 <div class="container">
-  <p>
-    {{ question.html|safe }}
-  </p>
-<form class="form" action="" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="question_pk" value="{{ question.pk }}">
-    {% for choice in question.choices.all %}
-    <div class="form-check">
-      <label class="form-check-label" for="choice-{{ forloop.counter }}">
-        <input class="form-check-input" type="checkbox" name="choice_pk" id="choice-{{ forloop.counter }}" value="{{ choice.pk }}">
-        {{ choice.html|safe }}
-      </label>
-    </div>
+  <div class="jumbotron">
 
-    {% endfor %}
-    <input class="btn btn-primary" type="submit" value="Submit">
-</form>
+    <h3>{{ question.html|safe }}</h3>
+    <form class="form" action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="question_pk" value="{{ question.pk }}">
+        {% for choice in question.choices.all %}
+        <div class="form-check">
+          <label class="form-check-label" for="choice-{{ forloop.counter }}">
+            <input class="form-check-input" type="checkbox" name="choice_pk" id="choice-{{ forloop.counter }}" value="{{ choice.pk }}">
+            {{ choice.html|safe }}
+          </label>
+        </div>
 
+        {% endfor %}
+        <input class="btn btn-primary" type="submit" value="Submit">  
+    </form>
+  </div>
 </div>
 {% endif %}
 
