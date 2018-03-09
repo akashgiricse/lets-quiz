@@ -1,5 +1,4 @@
 from django.conf.urls import url
-from django.contrib.auth import views as auth_views
 from . import views
 
 app_name = 'quiz'
@@ -10,8 +9,5 @@ urlpatterns = [
     url(r'^play/$', views.play, name='play'),
     url(r'^leaderboard/$', views.leaderboard, name='leaderboard'),
     url(r'^submission-result/(?P<attempted_question_pk>\d+)/', views.submission_result, name='submission_result'),
-    url(r'^register$', views.register.as_view(), name='register'),
-    url(r"login/$", auth_views.LoginView.as_view(template_name="quiz/login.html"), name='login'),
-    url(r"logout/$", auth_views.LogoutView.as_view(), name="logout"),
 
 ]

@@ -2,10 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
-from django.core.urlresolvers import reverse_lazy
 from .models import QuizProfile, Question, AttemptedQuestion
-from django.views.generic import CreateView
-from . import forms
 
 
 def home(request):
@@ -70,9 +67,3 @@ def submission_result(request, attempted_question_pk):
     }
 
     return render(request, 'quiz/submission_result.html', context=context)
-
-
-class register(CreateView):
-    form_class = forms.UserCreateForm
-    success_url = reverse_lazy("quiz:login")
-    template_name = "quiz/registration.html"

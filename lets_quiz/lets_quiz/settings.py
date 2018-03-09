@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap4',
     'quiz',
 ]
 
@@ -128,6 +127,3 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 # MEDIA
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
-
-LOGIN_REDIRECT_URL = "quiz:user_home"
-LOGOUT_REDIRECT_URL = "quiz:home"
