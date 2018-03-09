@@ -1,6 +1,5 @@
 from django import forms
 from django.utils.translation import gettext as _
-from django.contrib.auth.models import User
 from .models import Question, Choice
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
