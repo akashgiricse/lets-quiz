@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | Let's Quiz Administration{% endblock %}
+
+{% block extrastyle %}
+<style>
+	#header {
+		background-color: #17A2B8;
+	}
+</style>
+
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Let's Quiz Administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
