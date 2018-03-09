@@ -37,7 +37,7 @@
                 {% else %}
                 <h5 class="text-white mt-2 mr-2">Welcome, {{ request.user.username }} | </h5>
                 
-                <button type="button" class="btn btn-danger  mr-4"><a href="{% url 'quiz:logout' %}" class="text-white">Log out</a></button>
+                <button type="button" class="btn btn-danger  mr-4"><a href="{% url 'quiz:logout' %}" class="text-white">Log out</a> <i class="fa fa-fw fa-sign-out" aria-hidden="true"></i></button>
                 {% endif %}
             </div>
         </div>
