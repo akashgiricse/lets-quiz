@@ -40,7 +40,7 @@ Dependenciies:
 
 ### 1. Clone this repoistory
 ```bash
-https://github.com/akashgiricse/lets-quiz.git
+git clone https://github.com/akashgiricse/lets-quiz.git
 cd lets_quiz
 ```
 
@@ -96,6 +96,6 @@ I have a mailing list located at: buggyrango@gmail.com
 
 ## License
 
-MIT License
+[![GitHub license](https://img.shields.io/github/license/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/blob/master/LICENSE)
 
 Copyright (c) 2018 Akash Giri.
