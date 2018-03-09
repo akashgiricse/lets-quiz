@@ -21,14 +21,15 @@
         <input type="hidden" name="question_pk" value="{{ question.pk }}">
         {% for choice in question.choices.all %}
         <div class="form-check">
-          <label class="form-check-label" for="choice-{{ forloop.counter }}">
-            <input class="form-check-input" type="checkbox" name="choice_pk" id="choice-{{ forloop.counter }}" value="{{ choice.pk }}">
-            {{ choice.html|safe }}
+          <label class="custom-control custom-checkbox" for="choice-{{ forloop.counter }}">
+            <input class="custom-control-input" type="checkbox" name="choice_pk" id="choice-{{ forloop.counter }}" value="{{ choice.pk }}">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{ choice.html|safe }}</span>
           </label>
         </div>
 
         {% endfor %}
-        <input class="btn btn-primary" type="submit" value="Submit">  
+        <input class="btn btn-info btn-lg" type="submit" value="Submit">  
     </form>
   </div>
 </div>
