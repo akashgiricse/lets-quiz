@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="static/quiz/favicon.png">
     <title>{% block title %} {% endblock title %}</title>
 
         <!-- Bootstrap CSS -->
@@ -19,7 +20,7 @@
     {% endblock css %}
 
 </head>
-<body>
+<body class="bg-light">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             {% if not request.user.is_active %}
@@ -36,8 +37,7 @@
                 <a href="{% url 'quiz:login' %}" class="btn btn-info mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a>
                 {% else %}
                 <h5 class="text-white mt-2 mr-2">Welcome, {{ request.user.username }} | </h5>
-                
-                <button type="button" class="btn btn-danger  mr-4"><a href="{% url 'quiz:logout' %}" class="text-white">Log out</a> <i class="fa fa-fw fa-sign-out" aria-hidden="true"></i></button>
+                <a href="{% url 'quiz:logout' %}" class="btn btn-danger mt-1">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 {% endif %}
             </div>
         </div>
@@ -46,13 +46,13 @@
 
     {% block content %}
     {% endblock content %}
-
-
-    <footer >
-            <ul class="list-inline text-center">
+    <footer class="bg-light text-muted py-0">
+        <div class="container py-4">
+            <ul class="list-inline mb-0 text-center">
                 <li class="list-inline-item">&copy; 2018 Let's Quiz.</li>
                 <li class="list-inline-item">All rights reserved.</li>
             </ul>
+        </div>
     </footer>
     <!-- jQuery first, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

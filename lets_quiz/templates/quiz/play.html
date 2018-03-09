@@ -4,16 +4,16 @@
 {% if question is None %}
 
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron my-4">
     <h1> You have already answered all of our questions. </h1>
-    <button type="button" class="btn btn-info btn-lg mr-1"><a href="{% url 'quiz:leaderboard' %}" class="text-white">See the leaderboard here</a></button>
+    <a href="{% url 'quiz:leaderboard' %}" class="btn btn-lg btn-info"><i class="fa fa-trophy" aria-hidden="true"></i> See the leaderboard here <i class="fa fa-trophy" aria-hidden="true"></i></a>
   </div>
 </div>
 
 {% else %}
 
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron my-4">
 
     <h3 class="text-info"> {{ question.html|safe }}</h3>
     <form class="form" action="" method="post">

@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} Let's Quiz | Welcome {% endblock title %}
 {% block content %}
-
+<div class="container my-4">
     <div class="jumbotron">
-    	<div class="container">
-	      <h2>Hurrey!! You have successfully logged in.</h2>
-	      <h3 class="text-danger">Before you play the quiz, here are the rules</h3>
+
+	      <h2 class="text-center text-info">Congratulations!! You have successfully logged in.</h2>
+	      <h3 class="text-info text-center">Before you play the quiz, here are the rules</h3>
 
         <div class="row">
 
@@ -27,9 +27,10 @@
                     </p>
                     <a href="{% url 'quiz:play' %}" class="btn btn-info">Let's play</a>
                 </div>  
-                <div class="card-footer">Rules last modified 08-03-2018</div>  
+                <div class="card-footer">Rules last modified 08-March-2018</div>  
             </div>  
         </div>  
-	  </div>
+
     </div>
+</div>
 {% endblock content %}
