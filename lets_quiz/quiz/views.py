@@ -13,6 +13,7 @@ def home(request):
     return render(request, 'quiz/home.html', context=context)
 
 
+@login_required()
 def user_home(request):
     context = {}
     return render(request, 'quiz/user_home.html', context=context)
