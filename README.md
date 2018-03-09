@@ -33,12 +33,12 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 
 ## Getting started with development
-Dependenciies:
+Dependencies:
 - Python 3.6.x
 - Django 1.11.x
 - Ubuntu 17.04 or later or Linux Mint 18.2 or later
 
-### 1. Clone this repoistory
+### 1. Clone this repository
 ```bash
 git clone https://github.com/akashgiricse/lets-quiz.git
 cd lets_quiz
@@ -78,7 +78,6 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
-
 
 ## Contribute
 
