@@ -103,5 +103,6 @@ python manage.py runserver
 I have a mailing list located at: buggyrango@gmail.com
 
 ## License
+MIT License
 
 Copyright (c) 2018 Akash Giri.
