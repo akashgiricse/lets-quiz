@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block title %} Let's Quiz | {{ title }} {% endblock title %}
 {% block content %}
 <div class="container my-4">
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" class="btn btn-success" value="{{ title }}">
-        
-    </form>
+	<div class="row">
+		<div class="col-md-4">
+		    <form method="POST" action="">
+		        {% csrf_token %}
+		        {{form|crispy}}
+		        <input type="submit" class="btn btn-success" value="{{ title }}">
+		        
+		    </form>
+		</div>
+	</div>
 
 </div>
 

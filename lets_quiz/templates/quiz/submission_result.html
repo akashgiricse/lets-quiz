@@ -4,8 +4,7 @@
 <div class="container">
 	<div class="jumbotron my-4">
 
-	   	<h3>{{ attempted_question.question.html|safe }}</h3>
-
+	   	<h3 class="text-info">{{ attempted_question.question.html|safe }}</h3>
 
 		<p>
 		    <strong>Your answer: </strong>
@@ -13,7 +12,7 @@
 		</p>
 
 		{% if attempted_question.selected_choice.is_correct %}
-		<h4>Yayy!! Your answer is correct. High Five! 🙌</h4>
+		<h4 class="text-success">Yayy!! Your answer is correct. High Five! 🙌</h4>
 		{% else %}
 		<h4 class="text-danger">Your answer is incorrect 😟</h4>
 		{% endif %}
