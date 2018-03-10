@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from .models import QuizProfile, Question, AttemptedQuestion
+from .forms import UserLoginForm, RegistrationForm
 
 
 def home(request):
@@ -67,3 +69,34 @@ def submission_result(request, attempted_question_pk):
     }
 
     return render(request, 'quiz/submission_result.html', context=context)
+
+
+def login_view(request):
+    title = "Login"
+    form = UserLoginForm(request.POST or None)
+    if form.is_valid():
+        username = form.cleaned_data.get("username")
+        password = form.cleaned_data.get("password")
+        user = authenticate(username=username, password=password)
+        login(request, user)
+        return redirect('/user-home')
+    return render(request, 'quiz/login.html', {"form": form, "title": title})
+
+
+def register(request):
+    title = "Register"
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/login')
+    else:
+        form = RegistrationForm()
+
+        context = {'form': form, 'title': title}
+        return render(request, 'quiz/registration.html', context=context)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
