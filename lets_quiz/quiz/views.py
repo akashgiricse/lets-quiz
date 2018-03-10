@@ -84,7 +84,7 @@ def login_view(request):
 
 
 def register(request):
-    title = "Register"
+    title = "Create account"
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():

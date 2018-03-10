@@ -3,18 +3,25 @@
 {% block title %} Let's Quiz | {{ title }} {% endblock title %}
 {% block content %}
 {% if not request.user.is_active %}
-<div class="container my-4">
 
-    <div class="row">
-        <div class="col-md-4">
-            <form method="POST" action="">
-                {% csrf_token %}
-                {{form|crispy}}
-                <input type="submit" class="btn btn-info" value="{{ title }}">   
-            </form>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+              <h1 class="mb-3 text-center">Please log in</h1>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <input type="submit" class="btn btn-info btn-block" value="{{ title }}"> 
+                </form>
+              <div class="text-center">
+                <p>or ...</p>
+                <a href="{% url 'quiz:register' %}" class="btn btn-success mb-3">Create account</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 {% else %}
 
     <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
