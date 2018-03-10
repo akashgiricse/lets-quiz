@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/png" href="static/quiz/favicon.png">
     <title>{% block title %} {% endblock title %}</title>
 
         <!-- Bootstrap CSS -->
@@ -25,10 +24,10 @@
         <div class="container">
             {% if not request.user.is_active %}
             <h1 class="mx-4"><a href="{% url 'quiz:home' %}" class="navbar-brand">
-            <img src="{% static "quiz/logo.png" %}" alt="Logo" class="rounded">
             Let's Quiz</a></h1>
             {% else %}
-            <h1><img src="{% static "quiz/logo.png" %}" alt="Logo" class="rounded"></h1>
+            <h1 class="mx-4"><a href="#" class="navbar-brand">
+            Let's Quiz</a></h1>
             {% endif %}
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end " id="navbar">
