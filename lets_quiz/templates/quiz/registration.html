@@ -2,18 +2,32 @@
 {% load crispy_forms_tags %}
 {% block title %} Let's Quiz | {{ title }} {% endblock title %}
 {% block content %}
+{% if not request.user.is_active %}
 <div class="container my-4">
 	<div class="row">
 		<div class="col-md-4">
 		    <form method="POST" action="">
 		        {% csrf_token %}
 		        {{form|crispy}}
-		        <input type="submit" class="btn btn-success" value="{{ title }}">
-		        
+		        <input type="submit" class="btn btn-success" value="{{ title }}"> 
 		    </form>
 		</div>
 	</div>
 
 </div>
+
+{% else %}
+
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 text-info">Let's Quiz</h1>
+        <p class="display-4 d-none d-sm-block">Test your skills and become a master.</p>
+        <p class="lead">We organize quizzes on various topics.</p>
+        <a href="{% url 'quiz:play' %}" class="btn btn-lg btn-info mt-1">Let's play</a>
+        <a href="{% url 'quiz:leaderboard' %}" class="btn btn-lg btn-info mt-1">Leaderboard</a>
+      </div>  
+    </section>
+
+{% endif %}
 
 {% endblock content %}

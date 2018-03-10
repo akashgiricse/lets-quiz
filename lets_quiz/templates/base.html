@@ -22,21 +22,18 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            {% if not request.user.is_active %}
             <h1 class="mx-4"><a href="{% url 'quiz:home' %}" class="navbar-brand">
-            Let's Quiz</a></h1>
-            {% else %}
-            <h1 class="mx-4"><a href="#" class="navbar-brand">
-            Let's Quiz</a></h1>
-            {% endif %}
+            <strong>Let's Quiz</strong></a></h1>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end " id="navbar">
                 {% if not request.user.is_active %}
-                <a href="{% url 'quiz:leaderboard' %}" class="btn btn-info mt-1 mx-1"><i class="fa fa-trophy" aria-hidden="true"></i> Leaderboard</a>
+                <a href="{% url 'quiz:leaderboard' %}" class="btn btn-info mt-1 mx-1">Leaderboard</a>
                 <a href="{% url 'quiz:login' %}" class="btn btn-info mt-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</a>
                 {% else %}
-                <h5 class="text-white mt-2 mr-2">Welcome, {{ request.user.username }} | </h5>
-                <a href="{% url 'quiz:logout' %}" class="btn btn-danger mt-1">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <h6 class="text-white mt-2 mr-2">Welcome, {{ request.user.username }} | </h6>
+                <h6 class="text-white mt-2"><a href="{% url 'quiz:leaderboard' %}" class="text-white">Leaderboard</a> |</h6>
+                <h6 class="mt-2"><a href="{% url 'quiz:play' %}" class="text-white mx-1">Let's play</a></h6>
+                <a href="{% url 'quiz:logout' %}" class="btn btn-danger mt-1 mx-1">Log Out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 {% endif %}
             </div>
         </div>
