@@ -13,7 +13,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 ### Site access features:
 
 * Quiz can be accessed only if the user is logged in.
-* For signup user is required to give *username*, *e-mail* and *password*.
+* For signup user is required to give *username*, *first name*, *last name*, *e-mail* and *password*.
 * For login the user will be required to enter *username* and *password* only.
 
 ### Features of the quiz:
@@ -102,7 +102,5 @@ python manage.py runserver
 I have a mailing list located at: buggyrango@gmail.com
 
 ## License
-
-[![GitHub license](https://img.shields.io/github/license/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/blob/master/LICENSE)
 
 Copyright (c) 2018 Akash Giri.
