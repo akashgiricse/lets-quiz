@@ -74,6 +74,7 @@ pip install -r requirements.txt
 
 ### 6. Run database migrations
 ```bash
+cd lets_quiz
 python manage.py migrate
 ```
 
