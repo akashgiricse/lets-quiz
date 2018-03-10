@@ -90,7 +90,7 @@ python manage.py runserver
 ## Contribute
 
 - Issue Tracker: [Issues](https://github.com/akashgiricse/lets-quiz/issues)
-- Source Code: [Download zip file here](https://github.com/akashgiricse/lets-quiz/archive/master.zip)
+- Source Code: [Download zip: Release v1.0.1](https://github.com/akashgiricse/lets-quiz/archive/1.0.1.zip)
 
 ## Contributors
 
