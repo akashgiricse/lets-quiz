@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from quiz import views as quiz_views
+from django.conf.urls import handler404, handler500
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('quiz.urls')),
 ]
+
+
+handler404 = quiz_views.error_404
+handler500 = quiz_views.error_500

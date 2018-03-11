@@ -100,3 +100,13 @@ def register(request):
 def logout_view(request):
     logout(request)
     return redirect('/')
+
+
+def error_404(request):
+    data = {}
+    return render(request, 'quiz/error_404.html', data)
+
+
+def error_500(request):
+    data = {}
+    return render(request, 'quiz/error_500.html', data)
