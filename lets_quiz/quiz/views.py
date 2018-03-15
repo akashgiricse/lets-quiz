@@ -88,7 +88,14 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            # Create a new user but avoid saving it yet
+            new_user = form.save(commit=False)
+            # set the choosen password
+            new_user.set_password(form.cleaned_data['password'])
+            # save the user object
+            new_user.save()
+            # Create the new user
+            profile = Profile.object.create(user=new_user)
             return redirect('/login')
     else:
         form = RegistrationForm()
