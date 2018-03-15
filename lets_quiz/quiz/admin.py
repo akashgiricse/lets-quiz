@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Question, Choice
+from .models import Question, Choice, Profile
 from .forms import QuestionForm, ChoiceForm, ChoiceInlineFormset
 # Register your models here.
 
@@ -33,3 +33,10 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Question, QuestionAdmin)
+
+
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ['user', 'date_of_birth', 'photo']
+
+
+admin.site.register(Profile, ProfileAdmin)
