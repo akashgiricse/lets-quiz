@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Let's Quiz | Edit your account {% endblock title %}
+{% block content %}
+
+   <h1>Edit</h1>
+   <form action="." method="POST" enctype="multipart/form-data">
+       {{ user_form|crispy}}
+       {{ profile_form|crispy}}
+       <input type="submit" name="" value="Save changes">
+   </form>
+
+{% endblock content %}
