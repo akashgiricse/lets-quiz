@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from .models import QuizProfile, Question, AttemptedQuestion
-from .forms import UserLoginForm, RegistrationForm
+from .forms import UserLoginForm, RegistrationForm, UserEditForm, ProfileEditForm
 
 
 def home(request):
@@ -88,20 +88,32 @@ def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            # Create a new user but avoid saving it yet
-            new_user = form.save(commit=False)
-            # set the choosen password
-            new_user.set_password(form.cleaned_data['password'])
-            # save the user object
-            new_user.save()
-            # Create the new user
-            profile = Profile.object.create(user=new_user)
+            form.save()
+            profile = UserProfile.object.create(user=request.user)
             return redirect('/login')
     else:
         form = RegistrationForm()
 
-        context = {'form': form, 'title': title}
-        return render(request, 'quiz/registration.html', context=context)
+    context = {'form': form, 'title': title}
+    return render(request, 'quiz/registration.html', context=context)
+
+
+@login_required()
+def edit(request):
+    if request.method == 'POST':
+        user_form = UserEditForm(instance=request.user, data=request.POST)
+        profile_form = ProfileEditForm(instance=request.user.profile,
+                                       data=request.POST,
+                                       files=request.FILES)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+    else:
+        user_form = UserEditForm(instance=request.user)
+        profile_form = ProfileEditForm(instance=request.user.profile)
+
+    context = {'user_form': user_form, 'profile_form': profile_form}
+    return render(request, 'quiz/edit.html', context=context)
 
 
 def logout_view(request):
