@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from quiz import views as quiz_views
 from django.conf.urls import handler404, handler500
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,3 +28,7 @@ urlpatterns = [
 
 handler404 = quiz_views.error_404
 handler500 = quiz_views.error_500
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
