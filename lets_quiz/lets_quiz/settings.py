@@ -123,13 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
+    # will not be served, long term storage
     os.path.join(BASE_DIR, "static"),
-)
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
