@@ -23,13 +23,13 @@ class QuestionAdmin(admin.ModelAdmin):
     actions = None
     form = QuestionForm
 
-    def has_delete_permission(self, request, obj=None):
-        return False
+    # def has_delete_permission(self, request, obj=None):
+    #     return False
 
-    def has_change_permission(self, request, obj=None):
-        if obj is not None and obj.pk is not None and obj.is_published is True:
-            return False
-        return True
+    # def has_change_permission(self, request, obj=None):
+    #     if obj is not None and obj.pk is not None and obj.is_published is True:
+    #         return False
+    #     return True
 
 
 admin.site.register(Question, QuestionAdmin)
