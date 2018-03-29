@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, get_user_model
 from django.utils.translation import gettext as _
-from .models import Question, Choice, Profile
+from .models import Question, Choice
 
 
 class QuestionForm(forms.ModelForm):
@@ -89,15 +89,3 @@ class RegistrationForm(UserCreationForm):
             user.save()
 
         return user
-
-
-class UserEditForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'email')
-
-
-class ProfileEditForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ('date_of_birth', 'photo')
