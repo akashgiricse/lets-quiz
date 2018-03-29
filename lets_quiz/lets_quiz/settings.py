@@ -25,7 +25,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'tbdy@fqf+)_@_nv71f@%8rqh02s%d@_l@_iemu35@^*r_00m9l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'letsquiz.pythonanywhere.com']
 
@@ -121,18 +121,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-# STATIC_ROOT = 'staticfiles'
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [STATIC_DIR, '/var/www/static/']
-
-# # MEDIA
-# MEDIA_ROOT = MEDIA_DIR
-# MEDIA_URL = '/media/'
-
-STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
