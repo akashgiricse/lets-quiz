@@ -1,4 +1,5 @@
 # Let's quiz
+### http://letsquiz.pythonanywhere.com/
 This is an online quiz organizing website project, developed using Python's web framework Django.<br>
 For front-end designing I have used Twitter's front-end library Bootstrap4.
 
@@ -100,7 +101,7 @@ python manage.py runserver
 ## Support
 
 * If you are having issues, please let me know.<gr>
-I have a mailing list located at: buggyrango@gmail.com
+I have a mailing list located at: contact@akashgiri.com
 
 ## License
 MIT License
