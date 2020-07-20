@@ -1,5 +1,7 @@
 # Let's quiz
-### http://letsquiz.pythonanywhere.com/
+### http://letsquiz.pythonanywhere.com/ [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/) <br>
 This is an online quiz organizing website project, developed using Python's web framework Django.<br>
 For front-end designing I have used Twitter's front-end library Bootstrap4.
 
@@ -8,6 +10,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 [![GitHub forks](https://img.shields.io/github/forks/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/network)
 [![GitHub stars](https://img.shields.io/github/stars/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/stargazers)
 [![GitHub license](https://img.shields.io/github/license/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/blob/master/LICENSE)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ## Current Features
 
