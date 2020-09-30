@@ -21,10 +21,10 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 ### Features of the quiz:
 
-* Every question is multiple choice question.
+* Every question is a multiple choice question.
 * Every question is displayed only once per user.
 * Questions are displayed randomly for every user.
-* If the user presses refresh or go back to the previous page, there will be a new question for the user and the question he/she was on will be counted as attempted.
+* If the user presses refresh or clicks go back to the previous page, there will be a new question for the user and the question he/she was on will be counted as attempted.
 * A message is displayed after every attempted question whether the answer was correct or incorrect.
 
 
@@ -38,8 +38,8 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 * Only admin can add questions.
 * Admin can add questions and modify them until they are not marked as *Has been published?*
-* Once a question has been published, it can neither be modify nor can be accessed. Admin can only see a list of questions.
-* Admin can search questions by question text or choice text.
+* Once a question has been published, it can neither be modified nor can be accessed. Admin can only see a list of questions.
+* Admin can search questions by question textbox or choice textbox.
 * Admin can filter questions based on whether the questions have been published or not.
 
 
