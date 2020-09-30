@@ -15,7 +15,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 ### Site access features:
 
-* Quiz can be accessed only if the user is logged in.
+* User must be logged in to access the Quiz.
 * For signup user is required to give *username*, *first name*, *last name*, *e-mail* and *password*.
 * For login the user will be required to enter *username* and *password* only.
 
