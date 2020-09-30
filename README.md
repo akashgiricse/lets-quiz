@@ -1,4 +1,4 @@
-# Let's quiz
+# Let's start your python quiz
 ### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
 
 This is an online quiz organizing website project, developed using Python's web framework Django.<br>
@@ -16,7 +16,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 ### Site access features:
 
 * Quiz can be accessed only if the user is logged in.
-* For signup user is required to give *username*, *first name*, *last name*, *e-mail* and *password*.
+* For signup user is required to give *username*, *first name*, *last name*, *e-mail*,*date of birth* and *password*.
 * For login the user will be required to enter *username* and *password* only.
 
 ### Features of the quiz:
@@ -41,6 +41,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 * Once a question has been published, it can neither be modify nor can be accessed. Admin can only see a list of questions.
 * Admin can search questions by question text or choice text.
 * Admin can filter questions based on whether the questions have been published or not.
+* Any participate can ask answer related query after declearation of the quize result to Admin.
 
 
 ## Getting started with development
@@ -103,7 +104,8 @@ python manage.py runserver
 ## Support
 
 * If you are having issues, please let me know.<gr>
-I have a mailing list located at: contact@akashgiri.com
+* I have a mailing list located at: contact@akashgiri.com
+* Your issue will be solve within 48 working hours.
 
 ## License
 MIT License
