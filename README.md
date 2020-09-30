@@ -2,7 +2,7 @@
 ### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
 
 This is an online quiz organizing website project, developed using Python's web framework Django.<br>
-For front-end designing I have used Twitter's front-end library Bootstrap4.
+For front-end designing, I have used Twitter's front-end library Bootstrap4.
 
 [![GitHub release](https://img.shields.io/github/release/akashgiricse/lets-quiz.svg)](https://img.shields.io/bower/vpre/bootstrap.svg)
 [![GitHub issues](https://img.shields.io/github/issues/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/issues)
@@ -21,7 +21,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 ### Features of the quiz:
 
-* Every question is multiple choice question.
+* Every question is multiple-choice questions.
 * Every question is displayed only once per user.
 * Questions are displayed randomly for every user.
 * If the user presses refresh or go back to the previous page, there will be a new question for the user and the question he/she was on will be counted as attempted.
@@ -31,19 +31,19 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 ### Leaderboard features:
 
 * Leaderboard is a shorted list according to the score obtained by the user.
-* If two users have same score, the user who has signed up earlier will have good ranking than the one who joines late.
+* If two users have the same score, the user who has signed up earlier will have a good ranking than the one who joins late.
 * Leaderboard is open to all. No login required.
 
 ### Administrative features:
 
 * Only admin can add questions.
 * Admin can add questions and modify them until they are not marked as *Has been published?*
-* Once a question has been published, it can neither be modify nor can be accessed. Admin can only see a list of questions.
+* Once a question has been published, it can neither be modified nor can be accessed. Admin can only see a list of questions.
 * Admin can search questions by question text or choice text.
 * Admin can filter questions based on whether the questions have been published or not.
 
 
-## Getting started with development
+## Getting started with the development
 Dependencies:
 - Python 3.6.x
 - Django 1.11.x
