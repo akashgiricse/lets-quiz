@@ -15,30 +15,31 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 ### Site access features:
 
-* Quiz can be accessed only if the user is logged in.
-* For signup user is required to give *username*, *first name*, *last name*, *e-mail* and *password*.
-* For login the user will be required to enter *username* and *password* only.
+* Quiz can be accessed only if the user is logged in and has to log in every time.
+* For signup user is required to give *username*, *first name*, *last name*, *e-mail address* and *password*.
+* For login, the user will be required to enter *username* and *password* only.
 
 ### Features of the quiz:
 
-* Every question is multiple choice question.
-* Every question is displayed only once per user.
+* All questions are multiple choice question.
+* Each question is displayed only once per user.
 * Questions are displayed randomly for every user.
-* If the user presses refresh or go back to the previous page, there will be a new question for the user and the question he/she was on will be counted as attempted.
-* A message is displayed after every attempted question whether the answer was correct or incorrect.
+* If the user by-mistake presses refresh or go back to the previous page, there will be a new question for the user and the 
+  question he/she was on will be marked as attempted.
+* A message will be  displayed after every attempted question whether the answer was correct or incorrect.
 
 
 ### Leaderboard features:
 
-* Leaderboard is a shorted list according to the score obtained by the user.
-* If two users have same score, the user who has signed up earlier will have good ranking than the one who joines late.
+* Leaderboard is a shorted list according to the score obtained by the users.
+* If two users are having same score, the user who has signed up earlier will have good ranking than the one who joined late.
 * Leaderboard is open to all. No login required.
 
 ### Administrative features:
 
 * Only admin can add questions.
 * Admin can add questions and modify them until they are not marked as *Has been published?*
-* Once a question has been published, it can neither be modify nor can be accessed. Admin can only see a list of questions.
+* Once a question has been published, it can neither be modified nor can be accessed. Admin can only see a list of questions.
 * Admin can search questions by question text or choice text.
 * Admin can filter questions based on whether the questions have been published or not.
 
