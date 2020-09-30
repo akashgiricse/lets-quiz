@@ -31,7 +31,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 ### Leaderboard features:
 
 * Leaderboard is a shorted list according to the score obtained by the user.
-* If two users have same score, the user who has signed up earlier will have good ranking than the one who joines late.
+* If two users have same score, the user who has signed up earlier will have good ranking than the one who joins late.
 * Leaderboard is open to all. No login required.
 
 ### Administrative features:
