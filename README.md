@@ -1,7 +1,8 @@
 # Let's quiz
 ### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
 
-This is an online quiz organizing website project, developed using Python's web framework Django.<br>
+This is an online quiz organizing website project.<br>
+It is developed using Python's web framework Django.<br>
 For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 [![GitHub release](https://img.shields.io/github/release/akashgiricse/lets-quiz.svg)](https://img.shields.io/bower/vpre/bootstrap.svg)
