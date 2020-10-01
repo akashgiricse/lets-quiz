@@ -1,8 +1,11 @@
-# Let's quiz
+# Let's test how good are you in python.
+# Through a quiz we will see how good are you in python.
+# So don't wast time lets start the quiz.
+       read the following statments for more details
 ### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
 
-This is an online quiz organizing website project, developed using Python's web framework Django.<br>
-For front-end designing I have used Twitter's front-end library Bootstrap4.
+This is an online quiz organizing website project, developed using 's web framework Django.<br>
+For front-end designing I have used Twitter's front-end  Bootstrap4.
 
 [![GitHub release](https://img.shields.io/github/release/akashgiricse/lets-quiz.svg)](https://img.shields.io/bower/vpre/bootstrap.svg)
 [![GitHub issues](https://img.shields.io/github/issues/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/issues)
@@ -45,7 +48,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 
 ## Getting started with development
 Dependencies:
-- Python 3.6.x
+-  3.6.x
 - Django 1.11.x
 - Ubuntu 17.04 or later or Linux Mint 18.2 or later
 
@@ -64,7 +67,7 @@ Follow [instructions on official documentation page](https://virtualenvwrapper.r
 mkvirtualenv lets_quiz -a "$(pwd)" -p python3.6
 ```
 
-### 4. Install python packages
+### 4. Install  packages
 ```bash
 ## Activate the virtualenv which you created on the last step
 workon lets_quiz
@@ -78,17 +81,17 @@ pip install -r requirements.txt
 ### 6. Run database migrations
 ```bash
 cd lets_quiz
-python manage.py migrate
+ manage.py migrate
 ```
 
 ### 7. Create superuser
 ```bash
-python manage.py createsuperuser
+ manage.py createsuperuser
 ```
 
 ### 8. Run development server
 ```bash
-python manage.py runserver
+ manage.py runserver
 ```
 
 ## Contribute
