@@ -1,4 +1,4 @@
-# Let's quiz
+## Let's quiz
 ### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
 
 This is an online quiz organizing website project, developed using Python's web framework Django.<br>
@@ -11,7 +11,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 [![GitHub license](https://img.shields.io/github/license/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/blob/master/LICENSE)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-## Current Features
+## Current Features :
 
 ### Site access features:
 
@@ -43,7 +43,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 * Admin can filter questions based on whether the questions have been published or not.
 
 
-## Getting started with development
+## Getting started with development :
 Dependencies:
 - Python 3.6.x
 - Django 1.11.x
@@ -109,3 +109,4 @@ I have a mailing list located at: contact@akashgiri.com
 MIT License
 
 Copyright (c) 2018 Akash Giri.
+
