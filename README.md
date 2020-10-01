@@ -1,4 +1,4 @@
-# Let's quiz
+# Let's quiz get set and go
 ### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
 
 This is an online quiz organizing website project, developed using Python's web framework Django.<br>
@@ -19,7 +19,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 * For signup user is required to give *username*, *first name*, *last name*, *e-mail* and *password*.
 * For login the user will be required to enter *username* and *password* only.
 
-### Features of the quiz:
+### Features of the quiz are:
 
 * Every question is multiple choice question.
 * Every question is displayed only once per user.
@@ -28,13 +28,13 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 * A message is displayed after every attempted question whether the answer was correct or incorrect.
 
 
-### Leaderboard features:
+### Leaderboard features are:
 
 * Leaderboard is a shorted list according to the score obtained by the user.
 * If two users have same score, the user who has signed up earlier will have good ranking than the one who joines late.
 * Leaderboard is open to all. No login required.
 
-### Administrative features:
+### Administrative features are:
 
 * Only admin can add questions.
 * Admin can add questions and modify them until they are not marked as *Has been published?*
