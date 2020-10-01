@@ -19,7 +19,7 @@ For front-end designing I have used Twitter's front-end library Bootstrap4.
 * For signup user is required to give *username*, *first name*, *last name*, *e-mail* and *password*.
 * For login the user will be required to enter *username* and *password* only.
 
-### rules :
+### rules for the quiz:
 
 * Every question is multiple choice question.
 * Every question is displayed only once per user.
