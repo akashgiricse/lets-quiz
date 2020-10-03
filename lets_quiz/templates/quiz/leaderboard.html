@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% block title %} Let's Quiz | Leaderboard {% endblock title %}
+
+{% block css %}
+{#  css for datatables #}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <h1 class="text-center my-4"><span class="badge badge-info"><i class="fa fa-trophy" aria-hidden="true"></i> TOP {{ total_count }} PLAYERS <i class="fa fa-trophy" aria-hidden="true"></i></span></h1>
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered" id="leaderboard_table">
         <thead>
             <tr>
                 <th>Position</th>
@@ -23,3 +30,16 @@
     </table>
 </div>
 {% endblock content %}
+
+{% block js %}
+  {# script for datatables #}
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+  <script type="text/javascript">
+  // add dataTable to leaderboard table
+    $(document).ready( function () {
+      $('#leaderboard_table').DataTable();
+    });
+
+  </script>
+{% endblock %}
