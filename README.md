@@ -1,4 +1,4 @@
-# Let's quiz
+# Let's Quiz
 ### [letsquiz.pythonanywhere.com/](https://letsquiz.pythonanywhere.com/) [![Website letsquiz.pythonanywhere.com](https://img.shields.io/website-up-down-green-red/http/letsquiz.pythonanywhere.com.svg)](http://letsquiz.pythonanywhere.com/)
 
 This is an online quiz organizing website project, developed using Python's web framework Django.<br>
