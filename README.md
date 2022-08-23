@@ -114,4 +114,4 @@ python manage.py runserver
 
 MIT License
 
-Copyright (c) 2018 Akash Giri.
+Copyright (c) 2022 Akash Giri.
